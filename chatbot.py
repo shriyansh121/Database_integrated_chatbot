@@ -14,12 +14,15 @@ from database import db_manager
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Database Configuration variables
-db_host = DB_CONFIG['host']
-db_user = DB_CONFIG['user']
-db_password = "root%40123"
-db_name = DB_CONFIG['database']
-db_port = DB_CONFIG['port']
+# Database Configuration
+db_host = st.secrets["DB_HOST"]
+db_user = st.secrets["DB_USER"]
+db_password = st.secrets["DB_PASSWORD"]
+db_name = st.secrets["DB_NAME"]
+db_port = st.secrets["DB_PORT"]
+
+# OpenAI API Key
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 st.set_page_config(
     page_title=f"{COMPANY_NAME} AI Assistant",
